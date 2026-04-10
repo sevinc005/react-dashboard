@@ -1,0 +1,65 @@
+/* Ümumi konteyner */
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #7DAACB;
+  min-height: 100vh;
+}
+
+/* KARTLARIN DÜZÜLÜŞÜ (Masaüstü üçün) */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Normalda 4 sütun */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* KARTIN STİLİ */
+.metric-card {
+  padding: 30px 20px;
+  border-radius: 15px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  transition: transform 0.2s ease;
+}
+
+.metric-card:active {
+  cursor: grabbing;
+}
+
+.metric-card h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.metric-card p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 10px 0 0 0;
+}
+
+/* --- RESPONSIVE HİSSƏ --- */
+
+/* Planşet üçün (Ekran 1024px-dən kiçik olduqda) */
+@media (max-width: 1024px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr); /* 4 sütun yerinə 2 sütun (2-2 düzülür) */
+  }
+}
+
+/* Mobil telefon üçün (Ekran 600px-dən kiçik olduqda) */
+@media (max-width: 600px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* Hər sətirdə 1 kart (tam alt-alta) */
+    padding: 10px;
+  }
+  
+  .metric-card {
+    padding: 20px;
+  }
+}
